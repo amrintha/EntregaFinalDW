@@ -1,0 +1,103 @@
+header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-fondo;
+    color: $color-texto;
+    font-family: $fuente-principal;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.header-section {
+    background-color: $color-nav;
+    width: 100vw;
+
+    div.title {
+        text-align: center;
+        font-size: 3.5rem;
+        font-weight: bold;
+        flex-grow: 1;
+        color: $color-texto;
+        padding-top: 0.5rem;
+        margin-bottom: 0.2rem;
+    }
+
+    div.social-icons {
+        display: flex;
+        gap: 15px;
+        position: absolute;
+        /*Fuera del flujo normal*/
+        right: 20px;
+        /*Se ponen a la derecha*/
+        top: 10px;
+    }
+
+    .icono-instagram {
+        width: 32px;
+        height: 32px;
+        fill: $color-texto;
+        transition: fill 0.3s ease;
+    }
+
+    nav {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        background-color: $color-nav;
+
+
+        .container-fluid {
+            width: 100vw;
+            margin: 0 auto;
+            padding: 0.2rem;
+            display: flex;
+            justify-content: center;
+            background-color: $color-nav;
+            font-style: $fuente-principal;
+            color: $color-texto;
+        }
+
+        .navbar-collapse {
+            ul.navbar-nav {
+                display: flex;
+                justify-content: center;
+                width: 100vw;
+
+                .nav-item.active .nav-link::after {
+                    width: 80%;
+                  }
+
+                a.nav-link {
+                    position: relative;
+                    padding-bottom: 2px;
+                    padding-top: 0;
+                    margin: 0 1rem;
+                    transition: color 0.3s ease;
+                    font-size: small;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        bottom: 1px;
+                        width: 0%;
+                        transform: translateX(-50%);
+                        height: 2px;
+                        background-color: #000;
+                        transition: width 0.3s ease;
+                    }
+
+                    &:hover::after {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}

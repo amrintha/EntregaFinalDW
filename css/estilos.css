@@ -1,0 +1,365 @@
+header {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #000;
+  font-family: "Helvetia Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.header-section {
+  background-color: #fdc425;
+  width: 100vw;
+}
+.header-section div.title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  flex-grow: 1;
+  color: #000;
+  padding-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.header-section div.social-icons {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  /*Fuera del flujo normal*/
+  right: 20px;
+  /*Se ponen a la derecha*/
+  top: 10px;
+}
+.header-section .icono-instagram {
+  width: 32px;
+  height: 32px;
+  fill: #000;
+  transition: fill 0.3s ease;
+}
+.header-section nav {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  background-color: #fdc425;
+}
+.header-section nav .container-fluid {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #fdc425;
+  font-style: "Helvetia Neue", sans-serif;
+  color: #000;
+}
+.header-section nav .navbar-collapse ul.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+.header-section nav .navbar-collapse ul.navbar-nav .nav-item.active .nav-link::after {
+  width: 80%;
+}
+.header-section nav .navbar-collapse ul.navbar-nav a.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  padding-top: 0;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+  font-size: small;
+}
+.header-section nav .navbar-collapse ul.navbar-nav a.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 1px;
+  width: 0%;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+.header-section nav .navbar-collapse ul.navbar-nav a.nav-link:hover::after {
+  width: 80%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.image-gallery-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.image-gallery-wrapper .image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.image-gallery-wrapper .image-grid img {
+  width: 100%;
+  max-width: 420px;
+  height: 420px;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+.image-gallery-wrapper .overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  font-style: "Helvetia Neue", sans-serif;
+  z-index: -2;
+}
+.image-gallery-wrapper:hover .image-grid img {
+  opacity: 0;
+}
+.image-gallery-wrapper:hover .overlay-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (max-width: 768px) {
+  .image-gallery-wrapper .image-gallery-wrapper .image-grid img {
+    max-width: 45%;
+  }
+}
+@media (max-width: 480px) {
+  .image-gallery-wrapper .image-gallery-wrapper .image-grid img {
+    max-width: 90%;
+  }
+  .image-gallery-wrapper .image-gallery-wrapper .overlay-text {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    top: 10%;
+    transform: translate(-50%, -35%);
+  }
+}
+
+section#portfolio {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+}
+section#portfolio div.portfolio-container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  max-width: 100%;
+  width: 100%;
+  margin: 0 !important;
+  padding: 10px;
+  place-items: center;
+  grid-template-areas: "item1 item2 item3 item4" "item5 item6 item7 item8" "item9 item10 item11 item12";
+}
+@media (max-width: 768px) {
+  section#portfolio div.portfolio-container {
+    grid-template-columns: repeat(2, fr);
+    grid-template-areas: "item1 item2" "item3 item4" "item5 item6" "item7 item8" "item9 item10" "item11 item12";
+  }
+}
+@media (max-width: 480px) {
+  section#portfolio div.portfolio-container {
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+    grid-template-areas: "item1" "item2" "item3" "item4" "item5" "item6" "item7" "item8" "item9" "item10" "item11" "item12";
+  }
+}
+section#portfolio div.portfolio-container div.portfolio-item {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section#portfolio div.portfolio-container div.portfolio-item img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(1) {
+  grid-area: item1;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(2) {
+  grid-area: item2;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(3) {
+  grid-area: item3;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(4) {
+  grid-area: item4;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(5) {
+  grid-area: item5;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(6) {
+  grid-area: item6;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(7) {
+  grid-area: item7;
+}
+section#portfolio div.portfolio-container div.portfolio-item:nth-child(8) {
+  grid-area: item8;
+}
+
+.about {
+  width: 100%;
+  padding: 2rem;
+}
+
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  width: 100vw;
+  margin: auto;
+}
+
+.about-text {
+  flex: 1;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  text-align: justify;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  padding-right: 3rem;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100vw;
+  padding: 2rem;
+}
+.form-container div.contact-info {
+  flex: 1;
+  margin-right: 2rem;
+}
+.form-container div.contact-info .icono-correo {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+}
+.form-container div.contact-info p {
+  font-size: 1.1rem;
+  color: #fff;
+}
+.form-container form.contact-form {
+  flex: 1;
+  margin: 0 auto;
+}
+.form-container form.contact-form div.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .form-container form.contact-form div.form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+}
+.form-container form.contact-form div.form-group label {
+  width: 150px;
+  margin-right: 10px;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .form-container form.contact-form div.form-group label {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+.form-container form.contact-form div.form-group input[type=text],
+.form-container form.contact-form div.form-group textarea {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .form-container form.contact-form div.form-group {
+    width: 100%;
+  }
+}
+
+footer {
+  background-color: #fdc425;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdc425;
+  height: 3rem;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0;
+}
+.footer-section .firma {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.footer-section .firma img {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 5px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.bg-body-tertiary {
+  background-color: #fdc425 !important;
+  font-size: 0.7rem;
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=estilos.css.map */
