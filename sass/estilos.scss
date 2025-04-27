@@ -1,3 +1,5 @@
+//Tuve que cambiar import por use, porque me salían muchos mensajes en la terminal que me hacían ruido.
+
 @use 'variables' as *;
 @use 'header' as *;
 @use 'cuerpo' as *;
