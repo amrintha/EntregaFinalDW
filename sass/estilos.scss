@@ -1,6 +1,6 @@
-@import 'variables';
-@import 'header';
-@import 'cuerpo';
-@import 'footer';
-@import 'mixins';
+@use 'variables' as *;
+@use 'header' as *;
+@use 'cuerpo' as *;
+@use 'footer' as *;
+@use 'mixins' as *;
 
