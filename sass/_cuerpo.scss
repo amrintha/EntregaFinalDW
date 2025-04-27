@@ -186,54 +186,63 @@ section#portfolio {
 }
 
 //CSS PARA SECICÓN ABOUT
-.about {
-    width: 100%;
-    padding: 2rem;
-}
+    .about {
+        width: 100vw;
+        margin-right: 5px;
+        padding: 2rem;
+        box-sizing: border-box;
+    }
 
-.about-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 0 2rem;
-    width: 100vw;
-    margin: auto;
-
-    @include respond-to(sm){
-        flex-direction: column;
+    .about-content {
+        display: flex;
+        justify-content: center;
         align-items: center;
-    }
-}
+        gap: 2rem;
+        padding: 0 2rem;
+        width: 100%;
+        margin: auto;
 
-.about-text {
-    flex: 1;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    text-align: justify;
-    line-height: 1.6;
-    color: #fff;
-
-    p{
-        margin-bottom: 1rem;
+        @include respond-to(sm){
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
-    .second-paragraph{
-        margin-top: 2rem;
-    }
-}
-
-.about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
+    .about-text {
+        flex: 1;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        text-align: justify;
+        line-height: 1.6;
+        color: #fff;
         max-width: 100%;
-        height: auto;
-        padding-right: 3rem;
+        overflow-wrap: break-word;
+
+        p{
+            margin-bottom: 1rem;
+        }
+
+        .second-paragraph{
+            margin-top: 2rem;
+        }
+
+        @include respond-to(sm){
+            padding: 1rem;
+        }
+        
     }
-}
+
+    .about-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            padding-right: 3rem;
+        }
+    }
 
 //CSS SECCIÓN CONTACT
 .form-container {

@@ -230,8 +230,10 @@ section#portfolio div.portfolio-container div.portfolio-item:nth-child(8) {
 }
 
 .about {
-  width: 100%;
+  width: 100vw;
+  margin-right: 5px;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 .about-content {
@@ -240,7 +242,7 @@ section#portfolio div.portfolio-container div.portfolio-item:nth-child(8) {
   align-items: center;
   gap: 2rem;
   padding: 0 2rem;
-  width: 100vw;
+  width: 100%;
   margin: auto;
 }
 @media (max-width: 480px) {
@@ -256,12 +258,19 @@ section#portfolio div.portfolio-container div.portfolio-item:nth-child(8) {
   text-align: justify;
   line-height: 1.6;
   color: #fff;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 .about-text p {
   margin-bottom: 1rem;
 }
 .about-text .second-paragraph {
   margin-top: 2rem;
+}
+@media (max-width: 480px) {
+  .about-text {
+    padding: 1rem;
+  }
 }
 
 .about-image {
